@@ -1,10 +1,4 @@
 import requests  # εισαγωγή της βιβλιοθήκης
-
-
-def more(text):
-    count = 0
-    for line in text.split('\n'):
-        print(line)import requests  # εισαγωγή της βιβλιοθήκης
 import re
 def more(text):
     count = 0
@@ -40,15 +34,3 @@ with requests.get(url) as response:  # το αντικείμενο response
         print(f"The cookies are {cookies}")
     else:
         print("No server found")
-        count += 1
-        if count % 30 == 0:
-            reply = input('Show more (y/n)? ')
-            if reply == 'n':
-                break
-
-
-url = 'http://python.org/'  # προσδιορισμός του url
-
-with requests.get(url) as response:  # το αντικείμενο response
-    html = response.text
-    more(html)
