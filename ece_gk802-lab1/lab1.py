@@ -16,8 +16,8 @@ def more(text):
             if reply == 'n':
                 break
 
-url = 'http://facebook.com/'  # προσδιορισμός του url
-url = input("Enter url:")
+# url = 'http://facebook.com/'  # προσδιορισμός του url
+url = input("Enter url: ")
 
 with requests.get(url) as response:  # το αντικείμενο response
 
