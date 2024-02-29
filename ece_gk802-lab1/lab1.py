@@ -13,15 +13,6 @@
 # url = 'http://facebook.com/'  # προσδιορισμός του url
 # # url = input("Enter url: ")
 
-# # def convert(lst):
-# #     res_dict = {}
-# #     for i in range(0, len(lst), 2):
-# #         res_dict[lst[i]] = lst[i + 1]
-# #     return res_dict
-
-# # lst = ['a', 1, 'b', 2, 'c', 3]
-# # print(convert(lst))
-
 
 # with requests.get(url) as response:  # το αντικείμενο response
 
@@ -54,27 +45,6 @@
 #         print("No server found")
 
 
-# input_list = [
-#     'fr=0WPFJ5gWt08kEWE5R..Bl4Hyi..AAA.0.0.Bl4Hyi.AWXpEdlr_2I',
-#     'expires=Wed 29-May-2024 12:46:26 GMT',
-#     'Max-Age=7776000',
-#     'path=/',
-#     'domain=.facebook.com',
-#     'secure',
-#     'httponly',
-#     'sb=onzgZSXdLwWB_x52rtpVHAN9',
-#     'expires=Fri 04-Apr-2025 12:46:26 GMT',
-#     'Max-Age=34560000',
-#     'path=/',
-#     'domain=.facebook.com',
-#     'secure',
-#     'httponly'
-# ]
-
-
-
-
-
 import requests
 import re
 
@@ -96,12 +66,12 @@ with requests.get(url) as response:
     print(f"Website headers are {response.headers}\n")
 
     server = response.headers.get('Server')
-# server name
+    # server name
     if server:
         print(f"The server is {server}.\n")
     else:
         print("No server found.\n")
-# cookies
+    # cookies
     cookies_header = response.headers.get('Set-Cookie')
 
     if cookies_header:
@@ -126,9 +96,6 @@ with requests.get(url) as response:
             print(f"The name of the cookie is: {list(cookie_dict.keys())[0]}.")
             if "expires" in cookie_dict:
                 print(f"It expires on {cookie_dict["expires"]}.")
-            
-
-        
     else:
         print("No cookies found")
 
